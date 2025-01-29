@@ -5,6 +5,12 @@ const chalk = require("chalk");
 
 
 export default () => {
+
+    const dataFs = "Utilities";
+    const workDir = process.cwd();
+    const rootDirectory = path.join(workDir, dataFs);
+    
+    
  
     const now = DateTime.now();
     const listDirectory = (dir:string, depth = 0) => {
@@ -41,15 +47,12 @@ export default () => {
         } catch (error) {
             console.error("Errore nell'accesso alla directory:");
         }
-    };
-    
-    // Imposta la directory di partenza
-    const dataFs = "Utilities";
-    const workDir = process.cwd();
-    const rootDirectory = path.join(workDir, dataFs);
-    
     console.log(`📂 Root: ${rootDirectory}`);
     listDirectory(rootDirectory);
+    };
+    
+  
+   
 }
 
    // const dataFs= "Utilities";
